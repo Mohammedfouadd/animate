@@ -1,0 +1,157 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: Arial, Tahoma, sans-serif;
+    line-height: 2;
+   
+}
+.loding{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    z-index: 5;
+    color: white;
+    text-align: center;
+
+}
+.loding h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    position: relative;
+    width: 230px;
+    mix-blend-mode: difference;
+    z-index: 1;
+}
+.loding h1::before{
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 0;
+    background-color: #0075ff;
+    width: 20px;
+    height: 60%;
+    animation: load 5s ease infinite;
+    z-index: -1;
+}
+@keyframes load {
+    0%,
+    100% {
+        left:0;
+    }
+    50% {
+        left:100%
+    }
+}
+.loding .span1{
+    position: absolute;
+    top:calc(50% + 50px);
+    left: calc(50% - 50px);
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: 5px solid #0075ff;
+    border-top: dotted;
+    border-bottom: dotted;
+    display: block;
+    animation: loop 2s linear infinite ;
+}
+@keyframes loop{
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(1turn);
+
+    }
+}
+.loding .span::before{
+    content: "";
+    position: absolute;
+    top:calc(50% - 100px);
+    left: calc(50% - 50px);
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 100px;
+    border-radius: 50px;
+    border: 5px solid #0075ff;
+    border-top: dotted;
+    border-bottom: dotted;
+    display: block;
+    /* animation: loop 2s linear infinite ; */
+}
+.loding .span::after{
+    content: "";
+    position: absolute;
+    top:calc(50% - 100px);
+    right:  calc(50% - 100px);
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 100px;
+    border-radius: 50px;
+    border: 5px solid #0075ff;
+    border-top: dotted;
+    border-bottom: dotted;
+    display: block;
+    /* animation: loop 2s linear infinite ; */
+}
+.padge{
+    height: 100vh;
+    display: none;
+   
+}
+.card{
+    background-color: white;
+   position: relative;
+    width: 300px;
+    text-align: center;
+    position: fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px ;
+    box-shadow: 0 0 10px #ddd inset;
+    z-index: -2;
+    border-radius: 10px;
+
+}
+
+.card img{
+    width: 100%;
+    border-radius: 10px;
+
+   
+}
+.padge::before{
+    content: '';
+    width: 300%;
+    height: 100%;
+    border-radius: 50%;
+    position: fixed;
+    top: 42%;
+    left: 40%;
+    transform: translateX(-50%) skew(0, -10deg);
+    background-color: #0075ff ;
+    animation: waving 8s ease-in-out infinite alternate ;
+    z-index: -99;
+}
+
+@keyframes waving {
+    0% {
+    transform: translateX(-50%) skew(0, -20deg);
+
+    }
+ 
+
+    
+    to{
+        
+        transform: translateX(-30%) skew(10deg, 0);
+    }
+}
